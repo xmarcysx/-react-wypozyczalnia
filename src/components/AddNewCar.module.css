@@ -1,0 +1,65 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: 100vh;
+  width: 100vw;
+  transition: 0.4s ease-in;
+}
+
+.register_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 95vh;
+  width: calc(95vw - 230px);
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: -2px 1px 12px 2px rgba(255, 255, 255, 0.37);
+  border-radius: 19px;
+  border: none;
+}
+
+.btn {
+  margin-top: 30px;
+  text-align: center;
+  background: linear-gradient(to right, #021b79, #0575e6);
+  border-radius: 30px;
+  border: none;
+  color: white;
+  font-size: 15px;
+  padding: 10px 45px;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 200px;
+  font-weight: bold;
+}
+
+.btn:hover {
+  color: #ffffff;
+  width: 250px;
+  letter-spacing: 2px;
+  transition: 0.4s ease;
+}
+
+.formularz {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.formularz input {
+  margin-bottom: 20px;
+  border-radius: 30px;
+  border: none;
+  font-size: 15px;
+  padding: 10px;
+  width: 230px;
+  height: 20px;
+}
+
+.formularz input:focus {
+  outline: none;
+}

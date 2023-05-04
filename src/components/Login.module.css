@@ -1,0 +1,69 @@
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+
+  border: none;
+  transition: 0.4s ease-in;
+}
+
+.login_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: -2px 1px 12px 2px rgba(255, 255, 255, 0.37);
+  height: 95vh;
+  width: 95vw;
+}
+
+.container h1 {
+  padding: 50px;
+}
+
+.btn {
+  margin-top: 30px;
+  text-align: center;
+  background: linear-gradient(to right, #021b79, #0575e6);
+  border-radius: 30px;
+  border: none;
+  color: white;
+  font-size: 15px;
+  padding: 10px 45px;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 200px;
+  font-weight: bold;
+}
+
+.btn:hover {
+  color: #ffffff;
+  width: 250px;
+  letter-spacing: 2px;
+  transition: 0.4s ease;
+}
+
+.formularz {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.formularz input {
+  margin-bottom: 20px;
+  border-radius: 30px;
+  border: none;
+  font-size: 15px;
+  padding: 10px;
+  width: 230px;
+  height: 20px;
+}
+
+.formularz input:focus {
+  outline: none;
+}

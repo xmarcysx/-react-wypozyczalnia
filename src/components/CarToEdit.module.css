@@ -1,0 +1,120 @@
+.product_component {
+  display: grid;
+  grid-template-columns: 30% 30% 25% 10%;
+  width: 700px;
+  height: 120px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.45);
+  box-shadow: -2px 1px 12px 2px rgba(255, 255, 255, 0.37);
+}
+
+.product_component:last-child {
+  margin-bottom: 20px;
+}
+
+.product_component img {
+  margin-left: 10px;
+  margin-top: 10px;
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.details .title {
+  font-size: 22px;
+  margin: 0;
+  padding: 0;
+}
+
+.details .model {
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.details .price {
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+.state {
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.state .state_btn_green {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  background-color: green;
+  width: 150px;
+  height: 60px;
+  color: white;
+  font-size: 16px;
+  text-transform: uppercase;
+  border-radius: 10px;
+}
+
+.state .state_btn_orange {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  background-color: orange;
+  width: 150px;
+  height: 60px;
+  color: white;
+  font-size: 16px;
+  text-transform: uppercase;
+  border-radius: 10px;
+}
+
+.state .state_btn_red {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  background-color: red;
+  width: 150px;
+  height: 60px;
+  color: white;
+  font-size: 16px;
+  text-transform: uppercase;
+  border-radius: 10px;
+}
+
+.delete {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  cursor: pointer;
+}
+
+.delete .delete_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  background-color: red;
+  width: 60px;
+  height: 60px;
+  color: white;
+  font-size: 16px;
+  text-transform: uppercase;
+  border-radius: 10px;
+}
