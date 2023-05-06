@@ -1,6 +1,6 @@
-import classes from './CarToEdit.module.css';
+import classes from '../../styles/Car.module.css';
 
-function CarToEdit(props) {
+function Car(props) {
   const state = props.state;
   let bgColor = null;
   switch (state) {
@@ -15,14 +15,6 @@ function CarToEdit(props) {
       break;
   }
 
-  function removeCarHandler() {
-    props.onDelete(props.id);
-  }
-
-  function changeCarStateHandler() {
-    props.onChangeState(props.id);
-  }
-
   return (
     <div className={classes.product_component}>
       <img src={props.img} alt="samochod" />
@@ -33,17 +25,14 @@ function CarToEdit(props) {
       </div>
 
       <div className={classes.state}>
-        <div className={bgColor} onClick={changeCarStateHandler}>
-          {props.state}
-        </div>
+        <div className={bgColor}>{props.state}</div>
       </div>
 
-      <div className={classes.delete}>
-        <span className={classes.delete_btn} onClick={removeCarHandler}>
-          X
-        </span>
+      <div className={classes.info}>
+        <p>Modyfikacja:</p>
+        <span>{props.modifyDate}</span>
       </div>
     </div>
   );
 }
-export default CarToEdit;
+export default Car;

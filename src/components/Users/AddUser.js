@@ -1,11 +1,11 @@
 import { useRef, useState, useEffect } from 'react';
 
-import SystemNavigation from './SystemNavigation';
-import PopupBad from './PopupBad';
-import Loading from './Loading';
-import PopupGood from './PopupGood';
+import Navigation from '../Navigation';
+import PopupBad from '../Popups/PopupBad';
+import Loading from '../Loading/Loading';
+import PopupGood from '../Popups/PopupGood';
 
-import classes from './AddUser.module.css';
+import classes from '../../styles/AddUser.module.css';
 
 function AddUser() {
   const [authBad, setAuthBad] = useState(false);
@@ -35,7 +35,6 @@ function AddUser() {
       }
     );
     const data = await response.json();
-    console.log(data);
   }
 
   function submitHandler(event) {
@@ -96,7 +95,7 @@ function AddUser() {
           : { backgroundColor: 'transparent' }
       }
     >
-      <SystemNavigation />
+      <Navigation />
 
       <div className={classes.register_container}>
         {isLoading ? (

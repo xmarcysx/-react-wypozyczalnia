@@ -1,12 +1,12 @@
 import { useRef, useState, useEffect } from 'react';
 import Select from 'react-select';
 
-import SystemNavigation from './SystemNavigation';
-import PopupBad from './PopupBad';
-import Loading from './Loading';
-import PopupGood from './PopupGood';
+import Navigation from '../Navigation';
+import PopupBad from '../Popups/PopupBad';
+import Loading from '../Loading/Loading';
+import PopupGood from '../Popups/PopupGood';
 
-import classes from './AddNewCar.module.css';
+import classes from '../../styles/AddNewCar.module.css';
 
 function AddNewCar() {
   const [authBad, setAuthBad] = useState(false);
@@ -161,7 +161,7 @@ function AddNewCar() {
           : { backgroundColor: 'transparent' }
       }
     >
-      <SystemNavigation />
+      <Navigation />
 
       <div className={classes.register_container}>
         {isLoading ? (

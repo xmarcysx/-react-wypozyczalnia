@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 import Select from 'react-select';
 
-import SystemNavigation from './SystemNavigation';
-import Product from './Product';
-import Loading from './Loading';
+import Navigation from '../Navigation';
+import Car from '../Cars/Car';
+import Loading from '../Loading/Loading';
 
-import classes from './ProductsList.module.css';
+import classes from '../../styles/ListCars.module.css';
 
-function ProductsList(props) {
+function ListCars(props) {
   const [userSearch, setUserSearch] = useState('');
   const [cars, setCars] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -91,10 +91,8 @@ function ProductsList(props) {
   }
 
   let filteredCars = selectedOption
-    ? cars.filter((car) => car.category === selectedOption.value)
+    ? cars.filter((car) => car.category.value === selectedOption.value)
     : cars;
-
-  console.log(filteredCars);
 
   if (selectedOption.value === 'wszystkie') {
     filteredCars = cars;
@@ -108,7 +106,7 @@ function ProductsList(props) {
 
   return (
     <div className={classes.container}>
-      <SystemNavigation />
+      <Navigation />
       <div className={classes.products_container}>
         {isLoading ? (
           <Loading />
@@ -128,7 +126,7 @@ function ProductsList(props) {
 
             <div className={classes.products}>
               {searchedCars.map((car) => (
-                <Product
+                <Car
                   key={car.id}
                   title={car.title}
                   model={car.model}
@@ -148,4 +146,4 @@ function ProductsList(props) {
   );
 }
 
-export default ProductsList;
+export default ListCars;

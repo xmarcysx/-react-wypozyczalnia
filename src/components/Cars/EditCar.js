@@ -1,6 +1,6 @@
-import classes from './Product.module.css';
+import classes from '../../styles/EditCar.module.css';
 
-function Product(props) {
+function EditCar(props) {
   const state = props.state;
   let bgColor = null;
   switch (state) {
@@ -15,6 +15,14 @@ function Product(props) {
       break;
   }
 
+  function removeCarHandler() {
+    props.onDelete(props.id);
+  }
+
+  function changeCarStateHandler() {
+    props.onChangeState(props.id);
+  }
+
   return (
     <div className={classes.product_component}>
       <img src={props.img} alt="samochod" />
@@ -25,14 +33,17 @@ function Product(props) {
       </div>
 
       <div className={classes.state}>
-        <div className={bgColor}>{props.state}</div>
+        <div className={bgColor} onClick={changeCarStateHandler}>
+          {props.state}
+        </div>
       </div>
 
-      <div className={classes.info}>
-        <p>Modyfikacja:</p>
-        <span>{props.modifyDate}</span>
+      <div className={classes.delete}>
+        <span className={classes.delete_btn} onClick={removeCarHandler}>
+          X
+        </span>
       </div>
     </div>
   );
 }
-export default Product;
+export default EditCar;

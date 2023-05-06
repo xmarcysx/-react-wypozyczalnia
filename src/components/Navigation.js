@@ -1,8 +1,8 @@
 import { NavLink } from 'react-router-dom';
 
-import classes from './SystemNavigation.module.css';
+import classes from '../styles/Navigation.module.css';
 
-function SystemNavigation(props) {
+function Navigation(props) {
   function logoutHandler() {
     sessionStorage.removeItem('loggedUserRole');
     return;
@@ -76,4 +76,4 @@ function SystemNavigation(props) {
   );
 }
 
-export default SystemNavigation;
+export default Navigation;

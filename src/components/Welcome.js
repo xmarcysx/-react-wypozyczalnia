@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
-import Loading from './Loading';
+import Loading from './Loading/Loading';
 
-import magazyn from '../images/wypozyczalnia.jpg';
-import classes from './Welcome.module.css';
+import magazyn from '../assets/images/wypozyczalnia.jpg';
+import classes from '../styles/Welcome.module.css';
 
 function Welcome() {
   const [isLoading, setIsLoading] = useState(true);

@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 
-import classes from './Welcome.module.css';
+import classes from '../styles/Welcome.module.css';
 
 function ErrorPage() {
   return (

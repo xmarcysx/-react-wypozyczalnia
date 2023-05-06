@@ -4,13 +4,13 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ErrorPage from './components/ErrorPage';
 import Login from './components/Login';
 import Welcome from './components/Welcome';
-import ProductsList from './components/ProductsList';
-import AddUser from './components/AddUser';
-import EditCars from './components/EditCars';
+import ListCars from './components/Cars/ListCars';
+import AddUser from './components/Users/AddUser';
+import ListEditCars from './components/Cars/ListEditCars';
 import Protected from './components/Protected';
+import AddNewCar from './components/Cars/AddNewCar';
 
 import './App.css';
-import AddNewCar from './components/AddNewCar';
 
 const loggedRole = sessionStorage.getItem('loggedUserRole');
 
@@ -19,10 +19,8 @@ function App() {
 
   useEffect(() => {
     if (loggedRole === 'admin') {
-      console.log('TAK');
       setIsSignedIn(true);
     } else {
-      console.log('Nie');
       setIsSignedIn(false);
     }
   }, []);
@@ -32,7 +30,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Welcome />} />
         <Route path="/logowanie" element={<Login />} />
-        <Route path="/system/lista-samochodow" element={<ProductsList />} />
+        <Route path="/system/lista-samochodow" element={<ListCars />} />
 
         <Route
           path="/system/dodaj-uzytkownika"
@@ -46,7 +44,7 @@ function App() {
           path="/system/edycja-samochodow"
           element={
             <Protected isSignedIn={isSignedIn}>
-              <EditCars />
+              <ListEditCars />
             </Protected>
           }
         />
@@ -65,41 +63,3 @@ function App() {
 }
 
 export default App;
-
-// import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-
-// import ErrorPage from './components/ErrorPage';
-// import Login from './components/Login';
-// import Welcome from './components/Welcome';
-// import ProductsList from './components/ProductsList';
-// import AddUser from './components/AddUser';
-// import EditProduct from './components/EditProduct';
-
-// import './App.css';
-// import AddNewCar from './components/AddNewCar';
-
-// const loggedRole = sessionStorage.getItem('loggedUserRole');
-
-// const router = createBrowserRouter([
-//   {
-//     path: '/',
-//     errorElement: <ErrorPage />,
-//     children: [
-//       { path: '', element: <Welcome /> },
-//       { path: 'logowanie', element: <Login /> },
-//       {
-//         path: '/system/lista-samochodow',
-//         element: <ProductsList />,
-//       },
-//       { path: '/system/dodaj-uzytkownika', element: <AddUser /> },
-//       { path: '/system/edycja-samochodow', element: <EditProduct /> },
-//       { path: '/system/dodaj-samochod', element: <AddNewCar /> },
-//     ],
-//   },
-// ]);
-
-// function App() {
-//   return <RouterProvider router={router} />;
-// }
-
-// export default App;

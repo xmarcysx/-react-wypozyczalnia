@@ -1,4 +1,4 @@
-import classes from './PopupGood.module.css';
+import classes from '../../styles/PopupGood.module.css';
 
 function PopupGood(props) {
   return (

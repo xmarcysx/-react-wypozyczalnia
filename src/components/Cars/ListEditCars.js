@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 import Select from 'react-select';
 
-import SystemNavigation from './SystemNavigation';
-import CarToEdit from './CarToEdit';
-import Loading from './Loading';
+import Navigation from '../Navigation';
+import EditCar from '../Cars/EditCar';
+import Loading from '../Loading/Loading';
 
-import classes from './EditCars.module.css';
+import classes from '../../styles/ListEditCars.module.css';
 
-function EditCars(props) {
+function ListEditCars(props) {
   const [userSearch, setUserSearch] = useState('');
   const [cars, setCars] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -92,7 +92,7 @@ function EditCars(props) {
 
   function filterAndSearchCars() {
     let filteredCars = selectedOption
-      ? cars.filter((car) => car.category === selectedOption.value)
+      ? cars.filter((car) => car.category.value === selectedOption.value)
       : cars;
 
     if (selectedOption && selectedOption.value === 'wszystkie') {
@@ -174,7 +174,7 @@ function EditCars(props) {
 
   return (
     <div className={classes.container}>
-      <SystemNavigation />
+      <Navigation />
       <div className={classes.products_container}>
         {isLoading ? (
           <Loading />
@@ -194,7 +194,8 @@ function EditCars(props) {
 
             <div className={classes.products}>
               {filterAndSearchCars().map((car) => (
-                <CarToEdit
+                <EditCar
+                  key={car.id}
                   onChangeState={changeCarStateHandler}
                   onDelete={deleteCarHandler}
                   id={car.id}
@@ -216,4 +217,4 @@ function EditCars(props) {
   );
 }
 
-export default EditCars;
+export default ListEditCars;

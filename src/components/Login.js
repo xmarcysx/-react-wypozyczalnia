@@ -1,11 +1,11 @@
 import { useRef, useState, useEffect } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-import Loading from './Loading';
-import PopupBad from './PopupBad';
-import PopupGood from './PopupGood';
+import Loading from './Loading/Loading';
+import PopupBad from './Popups/PopupBad';
+import PopupGood from './Popups/PopupGood';
 
-import classes from './Login.module.css';
+import classes from '../styles/Login.module.css';
 
 function Login() {
   const [users, setUsers] = useState([]);
@@ -66,8 +66,6 @@ function Login() {
       login: loginRef.current.value,
       password: passwordRef.current.value,
     };
-
-    console.log(users);
 
     const user = users.find(
       (user) =>
